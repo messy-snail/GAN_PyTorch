@@ -1,8 +1,6 @@
 # GAN_PyTorch
-Various GAN implementations based on PyTorch. This project is consist of simple and standard version.   
-The Simple version has a relatively short code length, and only simple functions are implemented.   
-The Standard version has various functions rather than the simple version.  
-It also provides a UI using PyQt(In this case, the standard version is loaded and executed).
+Various GAN implementations based on PyTorch. This project is consist of simple and standard version. The Simple version has a relatively short code length, and only simple functions are implemented.   
+The Standard version has various functions rather than the simple version. It also provides a UI using PyQt(In this case, the standard version is loaded and executed).
 ~~In fact, I don't know if UI is comfortable...~~
 
 
@@ -24,7 +22,7 @@ MLP-based regular GAN is implemented. Ian Goodfellow's paper used Maxout, ReLU, 
 ![res_code](https://user-images.githubusercontent.com/38720524/42674458-c5a45f7a-86aa-11e8-9b73-0a8d26f01610.png)
 * This code uses the MNIST data set.
 
-##### **Import**
+#### **Import**
 **Import the necessary libraries.**
 * torch : Library to implement tensor or network structures
 * torchvision : Library for managing datasets
@@ -37,7 +35,7 @@ import torchvision.transforms as transforms
 from torchvision.utils import save_image
 import os
 ```
-##### **Parameter**
+#### **Parameter**
 **Set the image size, result path, and hyper parameter for learning.**
 * result_path : Path where the results are saved.
 * img_sz : Image size.(MNIST =28)
@@ -144,7 +142,7 @@ g_opt = tc.optim.Adam(G.parameters(), lr=lr)
 ##### **Train the D**
 * Load the images from the dataloader  
 ![res_images](https://user-images.githubusercontent.com/38720524/42674466-cc89e49a-86aa-11e8-97a3-4d49bec60c6c.png)
-* Flatten the images in one dimension to fit MLP.
+* Flatten the images in one dimension to fit MLP.  
 ![res_reshape](https://user-images.githubusercontent.com/38720524/42674483-e5b43542-86aa-11e8-99b6-1daa05b0c7d1.png)
 * Generate noise (lantic code) for the input of the generator.  
 ![res_noise](https://user-images.githubusercontent.com/38720524/42674500-f4b12898-86aa-11e8-843b-b99ecaafc8c3.png)
@@ -172,7 +170,7 @@ for ep in range(nEpoch):
         d_loss.backward()
         d_opt.step()
 ```
-##### **Train the G**
+#### **Train the G**
 * Perform the learning in a similar way as before. **Note that only learn about the generator.**  
 ![res_g_train](https://user-images.githubusercontent.com/38720524/42674532-1af03e86-86ab-11e8-8d1e-db360a3bf58d.png)
 ```python
@@ -198,7 +196,7 @@ for ep in range(nEpoch):
     save_image(out, os.path.join(result_path, 'fake_img {}.png'.format(ep)))
 ```
 #### **Result**
-**The figure below shows the results as the epoch increases.**  
+* The figure below shows the results as the epoch increases.
 ![fake_image1](https://user-images.githubusercontent.com/38720524/42674543-25791a4e-86ab-11e8-8e1d-ca33475c6bb2.png)
 ![fake_image15](https://user-images.githubusercontent.com/38720524/42674545-25a1a7c0-86ab-11e8-83da-9199d8f5d12a.png)
 ![fake_image60](https://user-images.githubusercontent.com/38720524/42674546-25c73c42-86ab-11e8-8081-0cbccb2bd2d8.png)
