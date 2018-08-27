@@ -89,9 +89,9 @@ for ep in range(nEpoch):
         g_opt.step()
 
         if step%200 ==0:
-            print('epoch {}/{}, step {}, d_loss {}, g_loss {}, Real_score {:.2f}, Fake_score {:.2f}'.format(ep, nEpoch, step+1, d_loss.item(), g_loss.item()), D(images), D(fake_images))
+            print('epoch {}/{}, step {}, d_loss {:.4f}, g_loss {:.4f}, Real_score {:.2f}, Fake_score {:.2f}'.format(ep, nEpoch, step+1, d_loss.item(), g_loss.item(), D(images).mean().item(), D(fake_images).mean().item()))
 
-    if ep+1 ==1:
+    if ep==0:
         out = images.reshape(mini, nChannel, img_sz, img_sz)
         out = img_range(out)
         save_image(out, os.path.join(result_path, 'real_img.png'))
