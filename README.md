@@ -196,7 +196,7 @@ for ep in range(nEpoch):
     save_image(out, os.path.join(result_path, 'fake_img {}.png'.format(ep)))
 ```
 #### **Result**
-* The figure below shows the results as the epoch increases.
+* The figure below shows the results as the epoch increases.  
 ![fake_image1](https://user-images.githubusercontent.com/38720524/42674543-25791a4e-86ab-11e8-8e1d-ca33475c6bb2.png)
 ![fake_image15](https://user-images.githubusercontent.com/38720524/42674545-25a1a7c0-86ab-11e8-83da-9199d8f5d12a.png)
 ![fake_image60](https://user-images.githubusercontent.com/38720524/42674546-25c73c42-86ab-11e8-8081-0cbccb2bd2d8.png)
@@ -204,4 +204,17 @@ for ep in range(nEpoch):
 
 
 #### Vanilla_Standard.py & for_UI.py
+will be updated
+
+
+### DCGAN  
+Deep Convolutional GAN is implemented.   
+[Paper](https://arxiv.org/pdf/1511.06434.pdf)
+#### DCGAN_Simple.py
+* This is a brief implementation of the DCGAN. This code uses LSUN and CelebA dataset.
+
+### InfoGAN  
+Information Maximizing GAN is implemented.   
+[Paper]()
+#### InfoGAN_Simple.py
 will be updated
