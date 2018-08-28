@@ -4,9 +4,9 @@ The Standard version has various functions rather than the simple version. It al
 ~~In fact, I don't know if UI is comfortable...~~
 
 ## **Implementation list**  
-* Vanilla GAN : [Simple](###Vanilla_Simple.py) | [Standard & UI](###Vanilla_Standard.py and for_UI.py)
-* DCGAN : [Simple](###DCGAN_Simple.py) |
-* InfoGAN : [Simple](####InfoGAN_Simple.py) |  
+* Vanilla GAN : [Simple](#vanilla_simplepy) | [Standard & UI](#vanilla_standardpy-and-for_uipy)
+* DCGAN : [Simple](#dcgan_simplepy) |
+* InfoGAN : [Simple](#infogan_simplepy) |  
 
 ## **Experiment Environment**  
 * Windows 10 Enterprise
@@ -330,23 +330,36 @@ def normal_init(m, mean, std):
 #### **Results**  
 **The figure below shows the results as the epoch increases.**  
 ##### **CelebA**  
-* real  ![real_img](https://user-images.githubusercontent.com/38720524/44708929-524ee380-aae3-11e8-8a36-3d1b3d5283fc.png)   
-* epoch 1  ![fake_img 0](https://user-images.githubusercontent.com/38720524/44708906-4531f480-aae3-11e8-8f00-b53b81bd413d.png)   
-* epcoh 5  ![fake_img 4](https://user-images.githubusercontent.com/38720524/44708916-4a8f3f00-aae3-11e8-96d0-355e510d8529.png)   
-* epoch 30  ![fake_img 29](https://user-images.githubusercontent.com/38720524/44708938-58dd5b00-aae3-11e8-9c96-8a8e411fca9d.png)   
+* real  
+![real_img](https://user-images.githubusercontent.com/38720524/44708929-524ee380-aae3-11e8-8a36-3d1b3d5283fc.png)   
+* epoch 1  
+![fake_img 0](https://user-images.githubusercontent.com/38720524/44708906-4531f480-aae3-11e8-8f00-b53b81bd413d.png)   
+* epcoh 5  
+![fake_img 4](https://user-images.githubusercontent.com/38720524/44708916-4a8f3f00-aae3-11e8-96d0-355e510d8529.png)   
+* epoch 30  
+![fake_img 29](https://user-images.githubusercontent.com/38720524/44708938-58dd5b00-aae3-11e8-9c96-8a8e411fca9d.png)   
 
 ##### **LSUN**  
-* real  ![real_img](https://user-images.githubusercontent.com/38720524/44711406-4403c600-aae9-11e8-9890-9d766d785c1f.png)  
-* epoch 1  ![fake_img 0](https://user-images.githubusercontent.com/38720524/44711415-48c87a00-aae9-11e8-97ee-a8e5e68936bd.png)  
-* epoch 2  ![fake_img 1](https://user-images.githubusercontent.com/38720524/44711425-4ebe5b00-aae9-11e8-9171-5bd089215313.png)  
-* epoch 5  ![fake_img 4](https://user-images.githubusercontent.com/38720524/44711427-541ba580-aae9-11e8-9bde-72d3f1cec4b9.png)  
+* real  
+![real_img](https://user-images.githubusercontent.com/38720524/44711406-4403c600-aae9-11e8-9890-9d766d785c1f.png)  
+* epoch 1  
+![fake_img 0](https://user-images.githubusercontent.com/38720524/44711415-48c87a00-aae9-11e8-97ee-a8e5e68936bd.png)  
+* epoch 2  
+![fake_img 1](https://user-images.githubusercontent.com/38720524/44711425-4ebe5b00-aae9-11e8-9171-5bd089215313.png)  
+* epoch 5  
+![fake_img 4](https://user-images.githubusercontent.com/38720524/44711427-541ba580-aae9-11e8-9bde-72d3f1cec4b9.png)  
 ##### **Koeran Idol(Black Pink)**  
 Data can be downloaded [here](https://drive.google.com/file/d/1kAhzcwZZszrpt7-nQ2YY1QMTVWM9iAya/view).
-* real  ![real_img](https://user-images.githubusercontent.com/38720524/44711538-8c22e880-aae9-11e8-959e-ecaf9337d9de.png)  
-* epoch 1  ![fake_img 0](https://user-images.githubusercontent.com/38720524/44711548-9218c980-aae9-11e8-99f3-de931d99dcc1.png)  
-* epoch 5  ![fake_img 4](https://user-images.githubusercontent.com/38720524/44711553-96dd7d80-aae9-11e8-8395-d97ea6ff49c9.png)  
-* epoch 100 ![fake_img 99](https://user-images.githubusercontent.com/38720524/44711569-9e9d2200-aae9-11e8-915c-ff20a2bf12c3.png)  
-* epoch 150  ![fake_img 150](https://user-images.githubusercontent.com/38720524/44711701-ef147f80-aae9-11e8-9d53-eb1fb4ea3685.png)  
+* real  
+![real_img](https://user-images.githubusercontent.com/38720524/44711538-8c22e880-aae9-11e8-959e-ecaf9337d9de.png)  
+* epoch 1  
+![fake_img 0](https://user-images.githubusercontent.com/38720524/44711548-9218c980-aae9-11e8-99f3-de931d99dcc1.png)  
+* epoch 5  
+![fake_img 4](https://user-images.githubusercontent.com/38720524/44711553-96dd7d80-aae9-11e8-8395-d97ea6ff49c9.png)  
+* epoch 100  
+![fake_img 99](https://user-images.githubusercontent.com/38720524/44711569-9e9d2200-aae9-11e8-915c-ff20a2bf12c3.png)  
+* epoch 150  
+![fake_img 150](https://user-images.githubusercontent.com/38720524/44711701-ef147f80-aae9-11e8-9d53-eb1fb4ea3685.png)  
 
 ## **InfoGAN**  
 Information Maximizing GAN is implemented.   
