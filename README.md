@@ -66,11 +66,11 @@ lr = 0.0002
 ### 3) Data load  
 **Load the dataset. This project used MNIST dataset.**
 * trans : Transform the dataset.
-  * `Compose()`is used when there are multiple transform options. Herem `ToTensor()` and `Normalize(mean, std)` are used.
+  * `Compose()`is used when there are multiple transform options. Here, `ToTensor()` and `Normalize(mean, std)` are used.
   * `ToTensor ()` changes the PIL Image to a tensor. torchvision dataset The default type is PIL Image.
   * `Normalize (mean, std)` transforms the range of the image. Here, the value of [0, 1] is adjusted to [-1, 1]. ((value-mean) / std)
 
-* dataset : Store (MNIST data) at the specified location.
+* dataset : Load (MNIST data) at the specified location.
   * root : This is the path to store (MNIST data). Folders are automatically created with the specified name.
   * train : Set the data to be used for the train.
   * transform : Transform the data according to the transform option set previously.
@@ -232,14 +232,14 @@ Deep Convolutional GAN is implemented.
 * **This code refers to the following [code1](https://github.com/znxlwm/pytorch-MNIST-CelebA-GAN-DCGAN) and [code2](https://github.com/taeoh-kim/Pytorch_DCGAN).**
 
 ### 1) Data load  
-**Load the dataset. This project used MNIST dataset.**
+**Load the dataset. This project used CelebA dataset.**
 * trans : Transform the dataset.
-  * `Compose()`is used when there are multiple transform options. Herem `ToTensor()` and `Normalize(mean, std)` are used.
+  * `Compose()`is used when there are multiple transform options. Here, `Resize()`, `ToTensor()` and `Normalize(mean, std)` are used.
   * `Resize()` is used to resize the image.
   * `ToTensor ()` changes the PIL Image to a tensor. torchvision dataset The default type is PIL Image.
   * `Normalize (mean, std)` transforms the range of the image. Here, the value of [0, 1] is adjusted to [-1, 1]. ((value-mean) / std)
 
-* dataset : Store (MNIST data) at the specified location.
+* dataset : Load (CelebA data) at the specified location.
   * `ImageFolder(path, trans)` : The data in the path is loaded according to the trans option.
   * If you want to use LSUN, change from `ImageFolder('./img_align_celeba', trans)` to `LSUN('.', classes=['bedroom_train'], transform=trans)`. 
   * The data must be in the same path. 
@@ -362,7 +362,65 @@ Data can be downloaded [here](https://drive.google.com/file/d/1kAhzcwZZszrpt7-nQ
 ![fake_img 150](https://user-images.githubusercontent.com/38720524/44711701-ef147f80-aae9-11e8-9d53-eb1fb4ea3685.png)  
 
 ## 3. InfoGAN  
-Information Maximizing GAN is implemented.   
+Information Maximizing GAN is implemented. It is implemented based on DCGAN.(Not MLP)   
 [Paper](https://arxiv.org/pdf/1606.03657.pdf)
 ## 3.1 InfoGAN_Simple.py  
+* This is a brief implementation of the InfoGAN. This code uses MNIST dataset.
+* If you want to use LSUN and CelebA, see [here](#21-dcgan_simplepy).
+* If you want to use 3d chair dataset, you can download it [here](https://www.di.ens.fr/willow/research/seeing3Dchairs/data/rendered_chairs.tar).
+* **This code refers to the following [code](https://github.com/taeoh-kim/Pytorch_InfoGAN).**
+
+### 1) Data load  
+**Load the dataset. This project used MNIST dataset.**
+* trans : Transform the dataset.
+  * `Compose()`is used when there are multiple transform options. Herem `ToTensor()` and `Normalize(mean, std)` are used.
+  * `Resize()` is used to resize the image.
+  * `ToTensor ()` changes the PIL Image to a tensor. torchvision dataset The default type is PIL Image.
+  * `Normalize (mean, std)` transforms the range of the image. Here, the value of [0, 1] is adjusted to [-1, 1]. ((value-mean) / std)
+
+* dataset : Load (MNIST data) at the specified location.
+  * `ImageFolder(path, trans)` : The data in the path is loaded according to the trans option.
+  * If you want to use LSUN, change from `ImageFolder('./img_align_celeba', trans)` to `LSUN('.', classes=['bedroom_train'], transform=trans)`. 
+  * The data must be in the same path. 
+
+* dataloader : Load the data in the dataset.
+  * dataset : Set the dataset to load.
+  * batch_size : Set the batch size. 
+  * shuffle : Shuffle the data and load it.
+
+```python
+will be updated
+```
+
+### 2) Generator  
+**Create a Generator**  
+* Used  5 transposed convolutional layers and 4 batch normalizations. Tanh is placed on the last layer to output [-1, 1].
+```python
+will be updated
+```
+### 3) Discriminator  
+**Create a Discriminator**
+* Used  5 convolutional layers and 3 batch normalizations. Sigmoid was placed on the last layer to output [0, 1].
+```python
+will be updated
+```
+### 4) Latent Code and Loss  
+**Create latent codes(noise, dc, cc) and compute the loss.**
+```python
+will be updated
+```
+
+### 5) Other functions  
+**It is very similar to the vanilla gan described above.**
+
+### 6) Results  
+**The figure below shows the results according to dc(discrete code, categorical code) and cc(continous code).**
+#### 6-1) MNIST  
+* result  
+will be updated
+#### 6-2) CelebA  
+* result  
+will be updated
+#### 6-3) 3D Chair  
+* result  
 will be updated
