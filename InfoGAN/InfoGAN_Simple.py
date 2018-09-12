@@ -141,7 +141,7 @@ dis_loss_func = nn.CrossEntropyLoss()
 g_opt = tc.optim.Adam(G.parameters(), lr=lr, betas=(0.5, 0.999))
 d_opt = tc.optim.Adam(D.parameters(), lr=lr, betas=(0.5, 0.999))
 
-# #TODO: Test module
+
 for ep in range(epoch_sz):
     for step, (images, _) in enumerate(dataloader):
         images = images.to(device)
