@@ -5,7 +5,9 @@ import torchvision as tv
 import torchvision.transforms as transforms
 from torchvision.utils import save_image
 import os
+import numpy as np
 
+#TODO : Test 해보기. 발산함.
 #epoch_sz = 100
 epoch_sz = 300
 #img_sz = 64
@@ -152,7 +154,12 @@ for ep in range(epoch_sz):
 
         #noise =tc.randn(mini_batch, latent_sz).view(-1, latent_sz, 1, 1).to(device)
         noise = tc.randn(mini_batch, latent_sz).to(device)
-        c1 = tc.randint(0, 10, (mini_batch,dc_sz))*0.1
+
+        temp_c1 = np.random.randint(0, dc_sz, mini_batch)
+        c1 = tc.zeros(mini_batch, dc_sz)
+        c1[range(mini_batch), temp_c1] =1
+
+        #c1 = tc.randint(0, 10, (mini_batch,dc_sz))*0.1
         c2 = tc.randn((mini_batch,cc_sz))
 
         c1=c1.to(device)
@@ -179,7 +186,7 @@ for ep in range(epoch_sz):
         # loss_real = loss_func(D_real, real_label)
         # loss_fake = loss_func(D_fake, fake_label)
 
-        #nose
+        #noise
         d_loss = -tc.mean(tc.log(D_real[:,0]) + tc.log(1-D_fake[:,0]))
 
         # noise, dc ,cc
