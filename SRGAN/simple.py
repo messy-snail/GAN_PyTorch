@@ -16,6 +16,7 @@ epoch_sz=30
 lr=0.0002
 ims_sz=64
 
+#하나의 블럭 통으로 구현.
 class Block_B(nn.Module):
     def __init__(self, input_sz):
         super(Block_B, self).__init__()
@@ -25,8 +26,10 @@ class Block_B(nn.Module):
         self.bn2 = nn.BatchNorm2d(64)
 
     def forward(self, x):
-        return x + F.prelu(self.bn1(self.conv1(x)))
+        step1= F.prelu(self.bn1(self.conv1(x)))
+        return x + self.bn2(self.conv2(step1))
 
+#TODO : 블럭 수 확인 필요.
 class Generator(nn.Module):
     def __init__(self):
         super(Generator, self).__init__()
