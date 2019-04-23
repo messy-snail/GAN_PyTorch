@@ -33,7 +33,10 @@ class Block_B(nn.Module):
 class Generator(nn.Module):
     def __init__(self):
         super(Generator, self).__init__()
-        self.block1 = Block_B(3)
+#TODO : padding 4 맞는지 확인하기.
+        self.conv1 = nn.Conv2d(3, 64, kernel_size=9, stride=1, padding=4)
+#TODO : for문을 이용하여 쌓는 방법 고려하기.
+        self.block1 = Block_B(64)
         self.block2 = Block_B(64)
         self.block3 = Block_B(64)
         self.block4 = Block_B(64)
@@ -41,6 +44,19 @@ class Generator(nn.Module):
         self.block6 = Block_B(64)
         self.block7 = Block_B(64)
         self.block8 = Block_B(64)
+        self.block9 = Block_B(64)
+        self.block10 = Block_B(64)
+        self.block11 = Block_B(64)
+        self.block12 = Block_B(64)
+        self.block13 = Block_B(64)
+        self.block14 = Block_B(64)
+        self.block15 = Block_B(64)
+        self.block16 = Block_B(64)
+
+
+
+
+
 
 
 
