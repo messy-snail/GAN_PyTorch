@@ -53,6 +53,8 @@ class Generator(nn.Module):
         self.block15 = Block_B(64)
         self.block16 = Block_B(64)
 
+#TODO : upasample과정 확인.
+
 
 
 
